@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo , column, manyToMany } from '@adonisjs/lucid/orm'
-import type { BelongsTo, ManyToMany} from '@adonisjs/lucid/types/relations'
+import { BaseModel , column, manyToMany } from '@adonisjs/lucid/orm'
+import type { ManyToMany} from '@adonisjs/lucid/types/relations'
 import Ingrediente from './ingrediente.js'
 
 
