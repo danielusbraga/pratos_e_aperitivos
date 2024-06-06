@@ -7,7 +7,7 @@ export default class extends BaseSeeder {
       {
         nome: 'Tomate Picado',
         quantidade: 2,
-        unidade_medida: 1, // 1 pode representar "unidade"
+        unidade_medida: 1, 
         receita_id: 1,
         ingrediente_id: 1,
       },

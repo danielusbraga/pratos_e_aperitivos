@@ -1,7 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel,  column, manyToMany, hasMany } from '@adonisjs/lucid/orm'
-import type { ManyToMany, HasMany} from '@adonisjs/lucid/types/relations'
-import ReceitaIngrediente from './receita_ingrediente.js'
+import { BaseModel,  column, hasMany } from '@adonisjs/lucid/orm'
+import type {HasMany} from '@adonisjs/lucid/types/relations'
 import Avaliacao from './avaliacao.js'
 import Comentario from './comentario.js'
 
@@ -18,10 +17,6 @@ export default class Usuario extends BaseModel {
   @column()
   declare senha: string
 
-  @manyToMany(()=>ReceitaIngrediente, {
-    pivotTable: 'receita_ingrediente'
-  })
-  declare receita_ingrediente: ManyToMany<typeof ReceitaIngrediente>
 
   @hasMany(()=>Avaliacao)
   declare avaliacao: HasMany<typeof Avaliacao>

@@ -4,7 +4,7 @@ import type { HasMany } from '@adonisjs/lucid/types/relations'
 import Receita from './receita.js'
 
 
-export default class categoria extends BaseModel {
+export default class Categoria extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
@@ -12,7 +12,6 @@ export default class categoria extends BaseModel {
   declare nome: string
 
   
-
  
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -21,7 +20,7 @@ export default class categoria extends BaseModel {
   declare updatedAt: DateTime
 
   @hasMany(()=>Receita)
-  declare produtos: HasMany<typeof Receita>
+  declare receitas: HasMany<typeof Receita>
 
   
 }

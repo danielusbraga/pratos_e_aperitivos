@@ -10,11 +10,10 @@ export default class extends BaseSchema {
       table.string('instrucoes', 1000).notNullable()
       table.integer('tempo_de_preparo')
       table.integer('num_porcoes').notNullable()
-      table.integer('categoria_id').unsigned().references('id').inTable('categorias').notNullable()
+      table.integer('categoria_id').unsigned().references('id').inTable('categorias').onDelete('CASCADE').notNullable()
 
-
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
+      table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
+      table.timestamp('updated_at', { useTz: true }).defaultTo(this.now())
     })
   }
 
